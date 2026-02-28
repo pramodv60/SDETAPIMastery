@@ -1,5 +1,6 @@
 package com.api.test;
 
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
@@ -13,19 +14,24 @@ public class AccountCreationTest {
 
 	@Test(description = "Account creation checks")
 	public void createAnAccount() {
+		String unique = "test" + System.currentTimeMillis();
+		String email = unique + "@test.com";
 
 		SignupRequest signupRequest = SignupRequest.builder()
 				.firstName("Test")
 				.lastName("Test")
-				.email("test@test.com")
+				.email(email)
 				.password("Test12345678!")
 				.mobileNumber("0123456789")
-				.username("unique_unique_username1@test.com")
+				.username(email)
 				.build();
 
 		AuthService authService = new AuthService();
 		Response response = authService.signUp(signupRequest);
 
-		assertTrue(response.asPrettyString().contains("success"), "User registration failed!");
+		int status = response.getStatusCode();
+		assertTrue(status >= 200 && status < 300,
+				"Signup should return 2xx, got " + status + ". Response: " + response.asPrettyString());
+		assertFalse(response.getBody().asString().isEmpty(), "Response body should not be empty");
 	}
 }

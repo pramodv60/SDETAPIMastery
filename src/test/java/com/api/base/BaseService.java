@@ -19,7 +19,6 @@ public class BaseService {
 		response = requestSpecification
 				.contentType(ContentType.JSON)
 				.body(payLoad)
-				.log().body()
 				.post(endPoint);
 		return response;
 	}
