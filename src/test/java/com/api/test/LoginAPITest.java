@@ -1,26 +1,33 @@
 package com.api.test;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertTrue;
+
 import org.testng.annotations.Test;
 
-import io.restassured.RestAssured;
+import com.api.base.AuthService;
+import com.api.base.BaseService;
+import com.api.models.request.LoginRequest;
+import com.api.models.response.LoginResponse;
+
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 
-import static org.testng.Assert.*;
-
-public class LoginAPITest {
+public class LoginAPITest extends BaseService {
 
 	@Test(description = "Verify if Login is working")
 	public void loginTest() {
 
-		RestAssured.baseURI = "https://swift.techwithjatin.com/";
-		RequestSpecification request = RestAssured.given();
-		request.header("Content-Type", "application/json")
-				.body("{\"password\":\"Bittergourd9731++\",\"username\":\"pramodv60@gmail.com\"}");
+		AuthService authService = new AuthService();
+		LoginRequest loginRequest = new LoginRequest("pramodv60@gmail.com", "Bittergourd9731++");
 
-		Response response = request.post("/api/auth/login");
+		Response response = authService.login(loginRequest);
+		LoginResponse loginResponse = response.as(LoginResponse.class);
+
+		String token = loginResponse.getToken();
 
 		assertEquals(response.getStatusCode(), 200, "Login should return 200 OK");
-		assertTrue(response.getBody().asString().length() > 0, "Response body should not be empty");
+		assertTrue(!response.getBody().asString().isEmpty(), "Response body should not be empty");
+		assertNotNull(token, "Token not obtained!");
 	}
 }
