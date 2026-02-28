@@ -20,8 +20,6 @@ public class LoginAPITest {
 
 		Response response = request.post("/api/auth/login");
 
-		System.out.println(response.asPrettyString());
-
 		assertEquals(response.getStatusCode(), 200, "Login should return 200 OK");
 		assertTrue(response.getBody().asString().length() > 0, "Response body should not be empty");
 	}
