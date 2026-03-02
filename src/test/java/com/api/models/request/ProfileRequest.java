@@ -10,9 +10,9 @@ public class ProfileRequest {
 	private final String username;
 	private final int id;
 
-	public ProfileRequest(Builder builder) {
+	private ProfileRequest(Builder builder) {
 		this.address = builder.address;
-		this.email = builder.email; 
+		this.email = builder.email;
 		this.firstName = builder.firstName;
 		this.lastName = builder.lastName;
 		this.mobileNumber = builder.mobileNumber;
@@ -25,13 +25,33 @@ public class ProfileRequest {
 				+ lastName + ", mobileNumber=" + mobileNumber + ", username=" + username + ", id=" + id + "]";
 	}
 
-	public String getAddress() { return address; }
-	public String getEmail() { return email; }
-	public String getFirstName() { return firstName; }
-	public String getLastName() { return lastName; }
-	public String getMobileNumber() { return mobileNumber; }
-	public String getUsername() { return username; }
-	public int getId() { return id; }
+	public String getAddress() {
+		return address;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public String getMobileNumber() {
+		return mobileNumber;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public int getId() {
+		return id;
+	}
 
 	public static Builder builder() {
 		return new Builder();

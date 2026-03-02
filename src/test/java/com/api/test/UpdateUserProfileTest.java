@@ -37,9 +37,10 @@ public class UpdateUserProfileTest {
 		assertTrue(userResponse.getId() > 0, "User id should be present and positive");
 
 		String address = "800 BBR road";
-		ProfileRequest profileRequest = ProfileRequest.builder().address(address).email(userResponse.getEmail())
-				.username(userResponse.getUsername()).firstName(userResponse.getFirstName())
-				.lastName(userResponse.getLastName())
+		String lastName = "Vasudeva Murthy";
+		ProfileRequest profileRequest = ProfileRequest.builder().id(userResponse.getId()).address(address)
+				.email(userResponse.getEmail()).username(userResponse.getUsername())
+				.firstName(userResponse.getFirstName()).lastName(lastName)
 				.mobileNumber(userResponse.getMobileNumber() != null ? userResponse.getMobileNumber() : "").build();
 
 		response = userProfileManagementService.updateProfile(loginResponse.getToken(), profileRequest);

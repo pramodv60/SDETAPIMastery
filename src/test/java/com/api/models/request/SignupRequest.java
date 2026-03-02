@@ -27,6 +27,13 @@ public class SignupRequest {
 				+ firstName + ", lastName=" + lastName + ", mobileNumber=" + mobileNumber + "]";
 	}
 
+	public String getUsername() { return username; }
+	public String getPassword() { return password; }
+	public String getEmail() { return email; }
+	public String getFirstName() { return firstName; }
+	public String getLastName() { return lastName; }
+	public String getMobileNumber() { return mobileNumber; }
+
 	public static class Builder {
 
 		private String username;
