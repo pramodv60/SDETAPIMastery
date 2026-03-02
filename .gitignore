@@ -1,7 +1,9 @@
-﻿# Maven
+# Maven
 target/
 # Test output
 test-output/
+# Logs
+logs/
 # Eclipse
 .classpath
 .project
