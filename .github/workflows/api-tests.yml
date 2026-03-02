@@ -1,11 +1,10 @@
-
 name: API Test Automation
 
 on:
   push:
     branches: [ main, master ]
   pull_request:
-    branches: [ main, master ]  
+    branches: [ main, master ]
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -15,29 +14,28 @@ jobs:
       issues: write
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
-    
+      uses: actions/checkout@v4
+
     - name: Set up JDK
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
         java-version: '11'
         distribution: 'temurin'
         cache: 'maven'
-    
-    
+
     - name: Run API Tests
-      run: mvn clean test -Dsuite=testNG -X
-    
+      run: mvn clean test
+
     - name: Upload test results
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: test-results
         path: |
           test-output/reports/
           target/surefire-reports/
           logs/
-    
+
     - name: Publish Test Report
       if: always()
       uses: dorny/test-reporter@v1
@@ -45,4 +43,3 @@ jobs:
         name: TestNG Results
         path: target/surefire-reports/junitreports/TEST-*.xml
         reporter: java-junit
-
