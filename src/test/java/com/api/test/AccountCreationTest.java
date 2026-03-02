@@ -3,6 +3,7 @@ package com.api.test;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.api.base.AuthService;
@@ -10,6 +11,7 @@ import com.api.models.request.SignupRequest;
 
 import io.restassured.response.Response;
 
+@Listeners(com.api.listeners.TestListener.class)
 public class AccountCreationTest {
 
 	@Test(description = "Account creation checks")
@@ -17,14 +19,8 @@ public class AccountCreationTest {
 		String unique = "test" + System.currentTimeMillis();
 		String email = unique + "@test.com";
 
-		SignupRequest signupRequest = SignupRequest.builder()
-				.firstName("Test")
-				.lastName("Test")
-				.email(email)
-				.password("Test12345678!")
-				.mobileNumber("0123456789")
-				.username(email)
-				.build();
+		SignupRequest signupRequest = SignupRequest.builder().firstName("Test").lastName("Test").email(email)
+				.password("Test12345678!").mobileNumber("0123456789").username(email).build();
 
 		AuthService authService = new AuthService();
 		Response response = authService.signUp(signupRequest);

@@ -1,0 +1,194 @@
+23:47:08.830 [main] INFO  com.api.listeners.TestListener - === Test suite started: API Tests ===
+23:47:08.832 [main] INFO  com.api.listeners.TestListener - Suite start time: 2026-03-02T23:47:08.809+1100
+23:47:08.984 [TestNG-test-API Tests-4] INFO  com.api.listeners.TestListener - [START] com.api.test.GetProfileRequestTest :: getProfileTest
+23:47:08.984 [TestNG-test-API Tests-1] INFO  com.api.listeners.TestListener - [START] com.api.test.LoginAPITest :: loginTest
+23:47:08.984 [TestNG-test-API Tests-2] INFO  com.api.listeners.TestListener - [START] com.api.test.AccountCreationTest :: createAnAccount
+23:47:08.989 [TestNG-test-API Tests-3] INFO  com.api.listeners.TestListener - [START] com.api.test.ForgotPasswordTest :: checkForgotPassword
+23:47:09.747 [TestNG-test-API Tests-4] INFO  com.api.filters.LoggingFilter - Request: POST https://swift.techwithjatin.com/api/auth/login
+23:47:09.748 [TestNG-test-API Tests-1] INFO  com.api.filters.LoggingFilter - Request: POST https://swift.techwithjatin.com/api/auth/login
+23:47:09.748 [TestNG-test-API Tests-3] INFO  com.api.filters.LoggingFilter - Request: POST https://swift.techwithjatin.com/api/auth/forgot-password
+23:47:09.747 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Request: POST https://swift.techwithjatin.com/api/auth/signup
+23:47:09.748 [TestNG-test-API Tests-1] INFO  com.api.filters.LoggingFilter - Headers: Accept=*/*
+Content-Type=application/json
+23:47:09.748 [TestNG-test-API Tests-4] INFO  com.api.filters.LoggingFilter - Headers: Accept=*/*
+Content-Type=application/json
+23:47:09.748 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Headers: Accept=*/*
+Content-Type=application/json
+23:47:09.748 [TestNG-test-API Tests-1] INFO  com.api.filters.LoggingFilter - Body: {"username":"pramodv60@gmail.com","password":"Bittergourd9731++"}
+23:47:09.748 [TestNG-test-API Tests-4] INFO  com.api.filters.LoggingFilter - Body: {"username":"pramodv60@gmail.com","password":"Bittergourd9731!"}
+23:47:09.748 [TestNG-test-API Tests-3] INFO  com.api.filters.LoggingFilter - Headers: Accept=*/*
+Content-Type=application/json
+23:47:09.748 [TestNG-test-API Tests-3] INFO  com.api.filters.LoggingFilter - Body: pramodv60@gmail.com
+23:47:09.748 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Body: {"username":"test1772455628990@test.com","password":"Test12345678!","email":"test1772455628990@test.com","firstName":"Test","lastName":"Test","mobileNumber":"0123456789"}
+23:47:11.233 [TestNG-test-API Tests-3] INFO  com.api.filters.LoggingFilter - Response Status: 500
+23:47:11.262 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Response Status: 200
+23:47:11.276 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Response Body: User registered successfully!
+23:47:11.287 [TestNG-test-API Tests-2] INFO  com.api.listeners.TestListener - [PASS] com.api.test.AccountCreationTest :: createAnAccount (2305 ms)
+23:47:11.292 [TestNG-test-API Tests-2] INFO  com.api.listeners.TestListener - [START] com.api.test.UpdateUserProfileTest :: updateProfileTest
+23:47:11.296 [TestNG-test-API Tests-4] INFO  com.api.filters.LoggingFilter - Response Status: 200
+23:47:11.298 [TestNG-test-API Tests-1] INFO  com.api.filters.LoggingFilter - Response Status: 401
+23:47:11.304 [TestNG-test-API Tests-3] INFO  com.api.filters.LoggingFilter - Response Body: {
+    "timestamp": "2026-03-02 12:47:06",
+    "status": 500,
+    "error": "System Error",
+    "message": "An unexpected error occurred",
+    "path": "uri=/api/auth/forgot-password",
+    "solution": "Please try again later or contact support",
+    "errorCode": "SYS_001"
+}
+23:47:11.305 [TestNG-test-API Tests-4] INFO  com.api.filters.LoggingFilter - Response Body: {
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFtb2R2NjBAZ21haWwuY29tIiwiaWF0IjoxNzcyNDU1NjI3LCJleHAiOjE3NzI0NTkyMjd9.hAEfVZAaPSd1ff8GhhDPxiQ3V8h9-eZYvi1B7GNnJBQ",
+    "type": "Bearer",
+    "id": 4552,
+    "username": "pramodv60@gmail.com",
+    "email": "pramodv60@gmail.com",
+    "roles": [
+        "ROLE_USER"
+    ]
+}
+23:47:11.306 [TestNG-test-API Tests-1] INFO  com.api.filters.LoggingFilter - Response Body: {
+    "timestamp": "2026-03-02 12:47:07",
+    "status": 401,
+    "error": "Invalid Credentials",
+    "message": "The username or password you entered is incorrect",
+    "path": "uri=/api/auth/login",
+    "solution": "Please check your credentials and try again",
+    "errorCode": "AUTH_002"
+}
+23:47:11.342 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Request: POST https://swift.techwithjatin.com/api/auth/login
+23:47:11.343 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Headers: Accept=*/*
+Content-Type=application/json
+23:47:11.343 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Body: {"username":"pramodv60@gmail.com","password":"Bittergourd9731!"}
+23:47:11.350 [TestNG-test-API Tests-3] ERROR com.api.listeners.TestListener - [FAIL] com.api.test.ForgotPasswordTest :: checkForgotPassword (2353 ms)
+23:47:11.352 [TestNG-test-API Tests-3] ERROR com.api.listeners.TestListener - Throwable: 
+java.lang.AssertionError: Forgot password endpoint should return OK! expected [200] but found [500]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at com.api.test.ForgotPasswordTest.checkForgotPassword(ForgotPasswordTest.java:22)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+23:47:11.436 [TestNG-test-API Tests-1] ERROR com.api.listeners.TestListener - [FAIL] com.api.test.LoginAPITest :: loginTest (2448 ms)
+23:47:11.436 [TestNG-test-API Tests-1] ERROR com.api.listeners.TestListener - Throwable: 
+java.lang.RuntimeException: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "timestamp" (class com.api.models.response.LoginResponse), not marked as ignorable (6 known properties: "username", "token", "type", "id", "email", "roles"])
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 15] (through reference chain: com.api.models.response.LoginResponse["timestamp"])
+	at io.restassured.internal.path.json.mapping.JsonPathJackson2ObjectDeserializer.deserialize(JsonPathJackson2ObjectDeserializer.java:30)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.mapping.Jackson2Mapper.deserialize(Jackson2Mapper.groovy:58)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.mapping.ObjectMapping.parseWithJackson2(ObjectMapping.groovy:269)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.mapping.ObjectMapping.deserialize(ObjectMapping.groovy:58)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.as(RestAssuredResponseOptionsGroovyImpl.groovy:233)
+	at io.restassured.internal.RestAssuredResponseOptionsImpl.as(RestAssuredResponseOptionsImpl.java:174)
+	at com.api.test.LoginAPITest.loginTest(LoginAPITest.java:25)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "timestamp" (class com.api.models.response.LoginResponse), not marked as ignorable (6 known properties: "username", "token", "type", "id", "email", "roles"])
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 15] (through reference chain: com.api.models.response.LoginResponse["timestamp"])
+	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:61)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:1153)
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:2241)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1793)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1771)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:316)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4905)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3848)
+	at io.restassured.internal.path.json.mapping.JsonPathJackson2ObjectDeserializer.deserialize(JsonPathJackson2ObjectDeserializer.java:28)
+	... 28 more
+23:47:11.460 [TestNG-test-API Tests-4] INFO  com.api.filters.LoggingFilter - Request: GET https://swift.techwithjatin.com/api/users/profile
+23:47:11.461 [TestNG-test-API Tests-4] INFO  com.api.filters.LoggingFilter - Headers: Authorization=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFtb2R2NjBAZ21haWwuY29tIiwiaWF0IjoxNzcyNDU1NjI3LCJleHAiOjE3NzI0NTkyMjd9.hAEfVZAaPSd1ff8GhhDPxiQ3V8h9-eZYvi1B7GNnJBQ
+Accept=*/*
+23:47:11.461 [TestNG-test-API Tests-4] INFO  com.api.filters.LoggingFilter - Body: null
+23:47:12.243 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Response Status: 200
+23:47:12.244 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Response Body: {
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFtb2R2NjBAZ21haWwuY29tIiwiaWF0IjoxNzcyNDU1NjI3LCJleHAiOjE3NzI0NTkyMjd9.hAEfVZAaPSd1ff8GhhDPxiQ3V8h9-eZYvi1B7GNnJBQ",
+    "type": "Bearer",
+    "id": 4552,
+    "username": "pramodv60@gmail.com",
+    "email": "pramodv60@gmail.com",
+    "roles": [
+        "ROLE_USER"
+    ]
+}
+23:47:12.258 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Request: GET https://swift.techwithjatin.com/api/users/profile
+23:47:12.258 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Headers: Authorization=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFtb2R2NjBAZ21haWwuY29tIiwiaWF0IjoxNzcyNDU1NjI3LCJleHAiOjE3NzI0NTkyMjd9.hAEfVZAaPSd1ff8GhhDPxiQ3V8h9-eZYvi1B7GNnJBQ
+Accept=*/*
+23:47:12.258 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Body: null
+23:47:12.264 [TestNG-test-API Tests-4] INFO  com.api.filters.LoggingFilter - Response Status: 200
+23:47:12.266 [TestNG-test-API Tests-4] INFO  com.api.filters.LoggingFilter - Response Body: {
+    "id": 4552,
+    "username": "pramodv60@gmail.com",
+    "email": "pramodv60@gmail.com",
+    "firstName": "Pramod",
+    "lastName": "V",
+    "mobileNumber": "0450326423"
+}
+23:47:12.274 [TestNG-test-API Tests-4] INFO  com.api.listeners.TestListener - [PASS] com.api.test.GetProfileRequestTest :: getProfileTest (3292 ms)
+23:47:13.110 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Response Status: 200
+23:47:13.111 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Response Body: {
+    "id": 4552,
+    "username": "pramodv60@gmail.com",
+    "email": "pramodv60@gmail.com",
+    "firstName": "Pramod",
+    "lastName": "V",
+    "mobileNumber": "0450326423"
+}
+23:47:13.136 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Request: PUT https://swift.techwithjatin.com/api/users/profile
+23:47:13.136 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Headers: Authorization=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFtb2R2NjBAZ21haWwuY29tIiwiaWF0IjoxNzcyNDU1NjI3LCJleHAiOjE3NzI0NTkyMjd9.hAEfVZAaPSd1ff8GhhDPxiQ3V8h9-eZYvi1B7GNnJBQ
+Accept=*/*
+Authorization=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFtb2R2NjBAZ21haWwuY29tIiwiaWF0IjoxNzcyNDU1NjI3LCJleHAiOjE3NzI0NTkyMjd9.hAEfVZAaPSd1ff8GhhDPxiQ3V8h9-eZYvi1B7GNnJBQ
+Content-Type=application/json
+23:47:13.136 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Body: {"address":"800 BBR road","email":"pramodv60@gmail.com","firstName":"Pramod","lastName":"Vasudeva Murthy","mobileNumber":"0450326423","username":"pramodv60@gmail.com","id":4552}
+23:47:13.994 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Response Status: 500
+23:47:14.003 [TestNG-test-API Tests-2] INFO  com.api.filters.LoggingFilter - Response Body: {
+    "timestamp": "2026-03-02 12:47:09",
+    "status": 500,
+    "error": "System Error",
+    "message": "An unexpected error occurred",
+    "path": "uri=/api/users/profile",
+    "solution": "Please try again later or contact support",
+    "errorCode": "SYS_001"
+}
+23:47:14.007 [TestNG-test-API Tests-2] INFO  com.api.listeners.TestListener - [PASS] com.api.test.UpdateUserProfileTest :: updateProfileTest (2715 ms)
+23:47:14.034 [main] INFO  com.api.listeners.TestListener - === Test suite finished: API Tests ===
+23:47:14.034 [main] INFO  com.api.listeners.TestListener - Total: 5 | Passed: 3 | Failed: 2 | Skipped: 0
+23:47:14.034 [main] INFO  com.api.listeners.TestListener - Suite end time: 2026-03-02T23:47:14.007+1100
