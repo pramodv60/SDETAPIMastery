@@ -16,10 +16,20 @@ public class BaseService {
 	}
 
 	protected Response postRequest(Object payLoad, String endPoint) {
-		response = requestSpecification
-				.contentType(ContentType.JSON)
-				.body(payLoad)
-				.post(endPoint);
+		response = requestSpecification.contentType(ContentType.JSON).body(payLoad).post(endPoint);
+		return response;
+	}
+
+	protected Response getRequest(String endpoint) {
+		return requestSpecification.get(endpoint);
+	}
+
+	protected void setAuthToken(String token) {
+		requestSpecification.header("Authorization", "Bearer " + token);
+	}
+
+	protected Response putRequest(Object payLoad, String endPoint) {
+		response = requestSpecification.contentType(ContentType.JSON).body(payLoad).put(endPoint);
 		return response;
 	}
 }
